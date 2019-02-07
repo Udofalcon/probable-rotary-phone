@@ -15,7 +15,7 @@ for (var x = 0; x < rows; x++) {
         cells[x][y] = {
             img: './clay.png'
         };
-        img.setAttribute('src', cell[x][y].img);
+        img.setAttribute('src', cells[x][y].img);
         cells[x][y].elem = img;
         cell.appendChild(img);
         row.appendChild(cell);
