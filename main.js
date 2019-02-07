@@ -2,14 +2,8 @@ var rows = 16;
 var columns = 16;
 var cells = [];
 var map = document.getElementById('map');
-var start = {
-    coordinates: [Math.floor(Math.random() * rows), Math.floor(Math.random() * columns)],
-    img: './cloth_14.png'
-};
-var goal = {
-    coordinates: [Math.floor(Math.random() * rows), Math.floor(Math.random() * columns)],
-    img: './cloth_5.png'
-};
+var start;
+var goal;
 
 for (var x = 0; x < rows; x++) {
     var row = document.createElement('tr');
@@ -33,5 +27,11 @@ for (var x = 0; x < rows; x++) {
     map.appendChild(row);
 }
 
-cells[start.coordinates[0]][start.coordinates[1]].img = start.img;
-cells[goal.coordinates[0]][goal.coordinates[1]].img = goal.img;
+start = cells[Math.floor(Math.random() * rows)][Math.floor(Math.random() * columns)];
+goal = cells[Math.floor(Math.random() * rows)][Math.floor(Math.random() * columns)];
+
+start.img = './cloth_14.png';
+goal.img = './cloth_5.png';
+
+start.elem.setAttribute('src', start.img);
+goal.elem.setAttribute('src', goal.img);
